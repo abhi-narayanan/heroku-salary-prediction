@@ -13,9 +13,9 @@ model = joblib.load('hiring_model.pkl')
 def welcome():
     return render_template('base.html')
 
-@app.route('/contact')
-def contact():
-    return 'Welcome to the Contact page!'
+@app.route('/<name>')
+def hello_name(name):
+    return f'Welcome to the ML app, {name}!'
 
 @app.route('/help')
 def help():
